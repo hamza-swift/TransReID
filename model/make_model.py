@@ -236,9 +236,10 @@ class build_transformer_local(nn.Module):
 
         self.base = factory[cfg.MODEL.TRANSFORMER_TYPE](img_size=cfg.INPUT.SIZE_TRAIN, sie_xishu=cfg.MODEL.SIE_COE, local_feature=cfg.MODEL.JPM, camera=camera_num, view=view_num, stride_size=cfg.MODEL.STRIDE_SIZE, drop_path_rate=cfg.MODEL.DROP_PATH)
 
-        if pretrain_choice == 'imagenet':
-            self.base.load_param(model_path)
-            print('Loading pretrained ImageNet model......from {}'.format(model_path))
+        #if pretrain_choice == 'imagenet':
+            #self.base.load_param(model_path)
+            #print('Loading pretrained ImageNet model......from {}'.format(model_path))
+            #print('nononononon')
 
         block = self.base.blocks[-1]
         layer_norm = self.base.norm
